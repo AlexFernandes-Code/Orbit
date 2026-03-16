@@ -26,8 +26,6 @@ local TEXT_LEVEL_BOOST = Constants.Levels.Overlay
 local TEXT_INSET = 5
 local SHADOW_OFFSET_X = 1
 local SHADOW_OFFSET_Y = -1
-local OVERLAY_PATH = "Interface\\AddOns\\Orbit\\Core\\assets\\Statusbar\\orbit-left-right.tga"
-local OVERLAY_ALPHA = 0.3
 local NECROTIC_PATH = "Interface\\AddOns\\Orbit\\Core\\Assets\\Statusbar\\necrotic.tga"
 local WHITE_TEXTURE = "Interface\\Buttons\\WHITE8x8"
 
@@ -115,8 +113,6 @@ function UnitButton:Create(parent, unit, name)
     f.HealthDamageTexture:SetPoint("BOTTOMLEFT", f.Health:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
     f.HealthDamageTexture:SetPoint("TOPRIGHT", f.HealthDamageBar:GetStatusBarTexture(), "TOPRIGHT", 0, 0)
     f.HealthDamageTexture:SetPoint("BOTTOMRIGHT", f.HealthDamageBar:GetStatusBarTexture(), "BOTTOMRIGHT", 0, 0)
-
-    Orbit.Skin:AddOverlay(f.Health, OVERLAY_PATH, "BLEND", OVERLAY_ALPHA)
 
     f.MyIncomingHealBar = CreatePredictionBar(f, f.Health, MY_HEAL_COLOR)
     f.OtherIncomingHealBar = CreatePredictionBar(f, f.Health, OTHER_HEAL_COLOR)
